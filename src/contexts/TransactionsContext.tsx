@@ -22,8 +22,13 @@ export const TransactionsContext = createContext({} as TransactionContextType);
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
+  console.log(transactions);
+
   async function loadTransactions() {
-    const response = await fetch("https://3000-davilucena2-dtmoneyblac-blu493mt8wk.ws-us62.gitpod.io/transactions");
+    const response = await fetch("https://3000-davilucena2-dtmoneyblac-blu493mt8wk.ws-us62.gitpod.io/transactions", {
+      mode: 'cors',
+      credentials: 'include'
+    });
     const data = await response.json();
 
     setTransactions(data);
