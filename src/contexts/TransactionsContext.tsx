@@ -33,8 +33,6 @@ export const TransactionsContext = createContext({} as TransactionContextType)
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([])
 
-  console.log(transactions)
-
   const fetchTransactions = useCallback(async (query?: string) => {
     const response = await api.get('/transactions', {
       params: {
@@ -44,6 +42,8 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
       },
     })
 
+    console.log(response)
+
     setTransactions(response.data)
   }, [])
 
@@ -51,13 +51,18 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     async (data: CreateTransactionInput) => {
       const { category, description, type, price } = data
 
-      const response = await api.post('/transactions', {
-        description,
-        price,
-        category,
-        type,
-        createdAt: new Date(),
-      })
+      const response = await api.post(
+        'https://my-json-server.typicode.com/davilucena222/dt-money-black',
+        {
+          description,
+          price,
+          category,
+          type,
+          createdAt: new Date(),
+        },
+      )
+
+      console.log(response)
 
       setTransactions((state) => [response.data, ...state])
     },
