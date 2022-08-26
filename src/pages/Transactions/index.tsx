@@ -53,7 +53,9 @@ export function Transactions() {
           <NoTransactions>
             <div>
               <SmileyMeh size={100} />
-              <p>Nenhuma transação ainda foi realizada</p>
+              <p>
+                Nenhuma transação encontrada. Clique no botão buscar novamente.
+              </p>
             </div>
           </NoTransactions>
         )}

@@ -42,8 +42,6 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
       },
     })
 
-    console.log(response)
-
     setTransactions(response.data)
   }, [])
 
@@ -51,18 +49,13 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     async (data: CreateTransactionInput) => {
       const { category, description, type, price } = data
 
-      const response = await api.post(
-        'https://my-json-server.typicode.com/davilucena222/dt-money-black',
-        {
-          description,
-          price,
-          category,
-          type,
-          createdAt: new Date(),
-        },
-      )
-
-      console.log(response)
+      const response = await api.post('/transactions', {
+        description,
+        price,
+        category,
+        type,
+        createdAt: new Date(),
+      })
 
       setTransactions((state) => [response.data, ...state])
     },
@@ -75,7 +68,11 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
 
   return (
     <TransactionsContext.Provider
-      value={{ transactions, fetchTransactions, createTransaction }}
+      value={{
+        transactions,
+        fetchTransactions,
+        createTransaction,
+      }}
     >
       {children}
     </TransactionsContext.Provider>
