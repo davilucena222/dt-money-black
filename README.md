@@ -10,13 +10,13 @@ This project was developed with the following tecnologies:
 
 - [React JS](https://reactjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Phosphor React]()
-- [Styled-Components]()
+- [Phosphor React](https://phosphoricons.com/)
+- [Styled-Components](https://styled-components.com/)
 - [Axios](https://axios-http.com/ptbr/docs/intro)
-- [Radix]()
+- [Radix](https://www.radix-ui.com/)
 - [Schedule]()
-- [Use Context Selector]()
-- [Zod]()
+- [Use Context Selector](https://github.com/dai-shi/use-context-selector)
+- [Zod](https://github.com/colinhacks/zod)
 
 # 💡 About the project 
 
