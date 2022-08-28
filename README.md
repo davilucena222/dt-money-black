@@ -14,7 +14,7 @@ This project was developed with the following tecnologies:
 - [Styled-Components](https://styled-components.com/)
 - [Axios](https://axios-http.com/ptbr/docs/intro)
 - [Radix](https://www.radix-ui.com/)
-- [Schedule]()
+- [Scheduler](https://www.npmjs.com/package/scheduler?activeTab=versions)
 - [Use Context Selector](https://github.com/dai-shi/use-context-selector)
 - [Zod](https://github.com/colinhacks/zod)
 
